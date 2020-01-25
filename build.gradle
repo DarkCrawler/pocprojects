@@ -1,0 +1,41 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.4.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+}
+
+group = 'org.tags.poc'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.10'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+project(':springrest') {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    project('restclient') {
+        bootJar {
+            baseName = 'restclient'
+            version = '0.1.0'
+            mainClassName = 'org.tags.poc.SpringMain'
+        }
+    }
+}
+
+wrapper {
+    gradleVersion = '4.10.3'
+    distributionType = 'all'
+}

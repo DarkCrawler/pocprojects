@@ -1,0 +1,3 @@
+rootProject.name = 'pocprojects'
+include 'springrest:restclient'
+include 'springrest:restproducer'
