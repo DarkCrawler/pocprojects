@@ -1,7 +1,7 @@
 ## : gradle : 
 
 ---
-####COMMANDS
+#### COMMANDS
 
 ```
 View dependency : gradle -q dependencies
@@ -10,7 +10,7 @@ View dependency : gradle -q dependencies
 ---
 
 
-####Repository Management
+#### Repository Management
 Setting remote secure maven reposiory
 ``` 
  repositories {
